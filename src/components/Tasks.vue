@@ -3,6 +3,7 @@
         <div  :key="task.id" v-for="task in tasks">
             <div id="taskContainer">
                 <Task @toggle="$emit('toggleReminder', task.id)"  :show="show" @close-task="closeTask(task.id)" :task="task" />
+                <!-- <Task @update="updateTask"  @toggle="$emit('toggleReminder', task.id)"  :show="show" @close-task="closeTask(task.id)" :task="task" /> -->
             </div>
         </div>
   </header>
@@ -26,11 +27,10 @@ export default {
     }, 
     methods : {
         closeTask(id){
-            // console.log(id) ;
             this.$emit('close', id) ; 
-        }
+        }, 
     }, 
-    emits : ['toggle']
+    emits : ['toggle', 'update' ]
 }
 </script>
 
