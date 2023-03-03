@@ -2,15 +2,15 @@
   <div>
     <form @submit="submitData" action>
       <div class="container">
-        <label for>task</label>
+        <label for>Task</label>
         <input type="text" ref="name" v-model="text" name="task" placeholder="Name" />
       </div>
       <div class="container">
-        <label for>day</label>
+        <label for>Day</label>
         <input type="text" ref="name" v-model="day" name="day" placeholder="day" />
       </div>
       <div class="container">
-        <label for>reminder</label>
+        <span >Reminder</span>
         <input type="checkbox" ref="name" v-model="reminder" name="reminder" placeholder="Name" />
       </div>
       <button type="submit">Submit</button>
@@ -60,12 +60,6 @@ input {
   border-radius: 10px;
   color: dar;
 }
-button {
-  margin-top: 10px;
-  text-align: center;
-  width: 100px;
-  height: 40px;
-}
 button:hover {
   background-color: rgb(0, 122, 122);
   color: darkblue;
@@ -75,11 +69,31 @@ button:hover {
 }
 .container label {
   display: block;
-  /* float: left; */
+  color: MidnightBlue;
+  float: left;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.container:last-of-type {
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 1.3rem;
+  color: MidnightBlue;
+
 }
 .container input {
   width: 90%;
-  padding: 8px;
+  padding: 10px ;
   margin-top: 4px;
+  background-color: lightblue;
+}
+button {
+  border-radius: 10px;
+  background-color: darkgrey;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
 }
 </style>

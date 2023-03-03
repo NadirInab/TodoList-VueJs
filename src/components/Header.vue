@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h2> {{title}} </h2>
+        <h2><i class="fa-solid fa-calendar-check"></i> {{title}} </h2>
     </div>
 </template>
 
