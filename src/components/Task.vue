@@ -27,10 +27,12 @@ export default {
         border: 2px solid rgb(60, 127, 250);
         border-radius: 10px;
         margin: 10px;
-        background-color: rgb(76, 141, 126);
+        background-color: rgba(32, 103, 103, 0.678);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
    b {
-    color: rgb(195, 110, 0);
+    color: rgb(16, 11, 5);
+    padding: 5px;
    }
    i {
     color: red;
@@ -39,7 +41,7 @@ export default {
     cursor: pointer;
    }
    .reminder {
-    border: 3px dashed green;
+    border: 3px solid rgb(10, 186, 81);
 
    }
 </style>

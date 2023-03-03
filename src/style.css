@@ -1,4 +1,4 @@
-
+/* 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -25,17 +25,29 @@ button:focus-visible {
 
 .card {
   padding: 2em;
+} */
+body {
+  background-image: url("../public/images/todo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #app {
   max-width: 1280px;
-  height: 50%;
-  width: 20rem;
+  height: 40%;
+  width: 23rem;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
-  border: 2px solid cadetblue;
+  border: 2px solid rgba(95, 137, 114, 0.89);
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 8.5px );
+  -webkit-backdrop-filter: blur( 8.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
 /* 
 @media (prefers-color-scheme: light) {
   :root {
