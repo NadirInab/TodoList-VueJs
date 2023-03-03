@@ -1,21 +1,25 @@
 <template>
-  <div>
-    <form @submit="submitData" action>
+  <div >
+    <form  @submit="submitData" action>
       <div class="container">
-        <label for>Task</label>
-        <input type="text" ref="name" v-model="text" name="task" placeholder="Name" />
+        <label class="fw-bold text-dark" for>Task</label>
+        <input
+          class="form-control"
+          type="text"
+          ref="name"
+          v-model="text"
+          name="task"
+          placeholder="Task"
+        />
       </div>
       <div class="container">
-        <label for>Day</label>
-        <input type="text" ref="name" v-model="day" name="day" placeholder="day" />
+        <label class="fw-bold text-dark"  for>Day</label>
+        <input class="form-control" type="date" ref="name" v-model="day" name="day" placeholder="date" />
       </div>
-      <div class="container">
-        <span >Reminder</span>
-        <input type="checkbox" ref="name" v-model="reminder" name="reminder" placeholder="Name" />
-      </div>
-      <button type="submit">Submit</button>
+      <button class="btn" type="submit">
+        <b>+</b> Add Task
+      </button>
     </form>
-    <!-- <Button showtask="showTask" color="darkcyan"  text="Submit" /> -->
   </div>
 </template>
 
@@ -31,21 +35,19 @@ export default {
     };
   },
   methods: {
-    submitData(e){
-        e.preventDefault() ;
-        const newTask = {
-            id : Math.floor(Math.random() * 1000) , 
-            text : this.text , 
-            day : this.day , 
-            reminder : this.reminder
-        } ;
-        this.$emit("addTask", newTask) ;
-        // console.log(newTask) ; 
-
-        this.text = "" ;
-        this.day = "" ;
-        this.reminder = "" ;
-    }
+    submitData(e) {
+      e.preventDefault();
+      const newTask = {
+        id: Math.floor(Math.random() * 1000),
+        text: this.text,
+        day: this.day,
+        reminder: this.reminder
+      };
+      this.$emit("addTask", newTask);
+      this.text = "";
+      this.day = "";
+      this.reminder = "";
+    }, 
   },
   components: {
     Button
@@ -54,26 +56,16 @@ export default {
 </script>
 
 <style scoped>
-input {
-  padding: 5px;
-  border: 2px solid lightseagreen;
-  border-radius: 10px;
-  color: dar;
-}
 button:hover {
   background-color: rgb(0, 122, 122);
   color: darkblue;
 }
-.container {
-  margin-left: 10px;
-}
 .container label {
   display: block;
-  color: MidnightBlue;
   float: left;
+  color: MidnightBlue;
   padding: 5px;
-  margin-left: 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-style: italic;
 }
 .container:last-of-type {
@@ -81,19 +73,22 @@ button:hover {
   margin-top: 5px;
   font-size: 1.3rem;
   color: MidnightBlue;
-
 }
 .container input {
-  width: 90%;
-  padding: 10px ;
-  margin-top: 4px;
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 2px;
   background-color: lightblue;
+  box-shadow: rgba(111, 198, 235, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 button {
   border-radius: 10px;
-  background-color: darkgrey;
-  width: 100px;
+  background-color: rgba(2, 146, 172, 0.664);
+  width: 120px;
   height: 40px;
   cursor: pointer;
+  font-weight: bold;
 }
 </style>
