@@ -1,0 +1,20 @@
+props .
+
+directives  .
+
+attribute binding .
+
+dynamic classes . 
+
+
+created(){
+      
+    }
+
+
+
+    created(){
+      this.tasks = [
+       
+      ]
+    }
