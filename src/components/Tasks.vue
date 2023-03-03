@@ -1,0 +1,44 @@
+<template>
+  <header>
+        <div  :key="task.id" v-for="task in tasks">
+            <div id="taskContainer">
+                <Task @toggle="$emit('toggleReminder', task.id)"  :show="show" @close-task="closeTask(task.id)" :task="task" />
+            </div>
+        </div>
+  </header>
+</template>
+
+<script>
+
+import Task from "./Task.vue" ;
+export default {
+
+    data(){
+        return {
+        }
+    }, 
+    props : {
+        tasks : Array, 
+        show : Boolean
+    }, 
+    components : {
+        Task
+    }, 
+    methods : {
+        closeTask(id){
+            // console.log(id) ;
+            this.$emit('close', id) ; 
+        }
+    }, 
+    emits : ['toggle']
+}
+</script>
+
+<style>
+    header{
+        display: inline;
+    }
+    .taskContainer{
+        display: flex;
+    }
+</style>
