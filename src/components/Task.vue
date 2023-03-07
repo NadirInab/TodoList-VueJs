@@ -1,12 +1,14 @@
 <template>
-  <div v-show="show" :class="[task.reminder ? 'reminder' : '','Container' ]">
+  <div :class="[task.reminder ? 'reminder' : '','Container' ]">
     <h4>{{task.text}}</h4>
     <b>{{task.day}}</b>
     <div class="d-flex justify-content-around">
-      <i title="delete" class="fa-solid fa-trash text-danger"></i>
-
-      <i  @click="$emit('updateTask',task.id)" title="update" class="fa-solid fa-pen-to-square text-primary"></i>
-
+      <i @click="closeTask" title="delete" class="fa-solid fa-trash text-danger"></i>
+      <i
+        @click="$emit('updateTask',task.id)"
+        title="update"
+        class="fa-solid fa-pen-to-square text-primary"
+      ></i>
       <i
         @click="$emit('toggle', task.id)"
         title="completed"
@@ -44,11 +46,14 @@ b {
   color: rgb(16, 11, 5);
   padding: 5px;
 }
+.reminder {
+  background-color: rgba(35, 153, 98, 0.785);
+  text-decoration-line: line-through;
+}
 i {
   padding: 4px;
   cursor: pointer;
+  text-decoration:none !important;
 }
-.reminder {
-  background-color: rgba(35, 153, 98, 0.785);
-}
+
 </style>

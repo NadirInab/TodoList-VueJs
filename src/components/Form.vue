@@ -37,8 +37,11 @@ export default {
   methods: {
     submitData(e) {
       e.preventDefault();
+      if(this.text == "" || this.day == "" )  {
+        alert("please fill in the form !!") ;
+        return 
+       } 
       const newTask = {
-        id: Math.floor(Math.random() * 1000),
         text: this.text,
         day: this.day,
         reminder: this.reminder
