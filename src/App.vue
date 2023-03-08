@@ -2,8 +2,8 @@
 <template>
   <div class="container">
     <Header @show="showForm" :show="show" title="ToDo List" />
-    <Form v-show="show" @addTask="add" />
-    <!-- <FormData v-show="showUpdate" :upToDateTask="upToDateTask" /> -->
+    <FormData v-if="showUpdate" :upToDateTask="upToDateTask" />
+    <Form v-else v-show="show" @addTask="add" />
     <Tasks @update="updateTask" @toggleReminder="togglereminder" @close="closeTask" :tasks="tasks" />
   </div>
 </template>
