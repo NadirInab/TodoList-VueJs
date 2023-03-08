@@ -12,16 +12,12 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
 export default {
   name: "Header",
   props: {
     title: String,
     test: String, 
     show : Boolean
-  },
-  components: {
-    Button
   }
 };
 </script>

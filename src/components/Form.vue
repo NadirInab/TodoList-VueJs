@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
 export default {
   name: "Form",
   data() {
@@ -51,9 +50,6 @@ export default {
       this.day = "";
       this.reminder = "";
     }, 
-  },
-  components: {
-    Button
   }
 };
 </script>

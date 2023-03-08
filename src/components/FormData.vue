@@ -29,14 +29,13 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
 export default {
   name: "Form",
   data() {
     return {
-      text: "",
-      day: "",
-      reminder: ""
+      // text: "",
+      // day: "",
+      // reminder: ""
       //  text : upToDateTask.text,
       //  day : upToDateTask.day,
       // reminder : upToDateTask.reminder
@@ -59,14 +58,12 @@ export default {
     //   this.day = "";
     //   this.reminder = "";
     }, 
-    async fillForm(){
-      this.text = upToDateTask.text
-      this.day = upToDateTask.day,
-      this.reminder = upToDateTask.reminder
-    }
-  },
-  components: {
-    Button
+
+    //  fillForm(){
+    //   this.text = upToDateTask.text
+    //   this.day = upToDateTask.day,
+    //   this.reminder = upToDateTask.reminder
+    // }
   }
 };
 </script>
