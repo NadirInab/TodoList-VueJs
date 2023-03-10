@@ -41,7 +41,7 @@ export default {
   methods: {
     async closeTask(id) {
       if (confirm("are you done !!"));
-      const response = await axios.delete(`http://localhost:5000/tasks/${id}`);
+      const response = await axios.delete(`http://localhost:5000/tasks/${id}`); 
       if (response.status == 200) {
         this.tasks = this.tasks.filter(task => {
           return task.id !== id;
@@ -53,6 +53,7 @@ export default {
 
     async togglereminder(id) {
       if (confirm("are you done !!"));
+      // fetch().then(response => respo)
       const response = await axios(`http://localhost:5000/tasks/${id}`);
       const remindedTask = response.data;
       const upDatedOne = await axios.put(`http://localhost:5000/tasks/${id}`, {
