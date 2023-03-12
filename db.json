@@ -3,13 +3,12 @@
     {
       "text": "9",
       "day": "2002-03-06",
-      "reminder": false,
+      "reminder": true,
       "id": 6
     },
     {
-      "text": "15",
-      "day": "2011-05-12",
-      "reminder": "",
+      "text": "9jj",
+      "day": "2002-03-06",
       "id": 7
     },
     {
@@ -35,12 +34,6 @@
       "day": "1972-03-07",
       "reminder": "",
       "id": 11
-    },
-    {
-      "text": "8",
-      "day": "2012-02-15",
-      "reminder": false,
-      "id": 12
     }
   ]
 }
