@@ -4,11 +4,11 @@
     <b>{{task.day}}</b>
     <div class="d-flex justify-content-around">
       <i @click="closeTask" title="delete" class="fa-solid fa-trash text-danger"></i>
-      <!-- <i
+      <i
         @click="$emit('updateTask',task.id)"
         title="update"
         class="fa-solid fa-pen-to-square text-primary"
-      ></i> -->
+      ></i>
       <i
         @click="$emit('toggle', task.id)"
         title="completed"
@@ -53,7 +53,6 @@ b {
 i {
   padding: 4px;
   cursor: pointer;
-  text-decoration:none !important;
+  text-decoration: none !important;
 }
-
 </style>

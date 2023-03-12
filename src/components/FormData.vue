@@ -23,22 +23,21 @@
           placeholder="date"
         />
       </div>
-      <button @click="fillForm" type="submit" class="btn">update</button>
+      <button type="submit" class="btn">update</button>
     </form>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: "Form",
   data() {
     return {
-      // text: "",
-      // day: "",
-      // reminder: ""
-      //  text : upToDateTask.text,
-      //  day : upToDateTask.day,
-      // reminder : upToDateTask.reminder
+      text: this.upToDateTask.text,
+      day: this.upToDateTask.day,
+      reminder: this.upToDateTask.reminder
     };
   },
   props: {
@@ -47,23 +46,16 @@ export default {
   methods: {
     submitData(e) {
       e.preventDefault();
-      console.log(upToDateTask) ;
-    //   const newTask = {
-    //     text: this.text,
-    //     day: this.day,
-    //     reminder: this.reminder
-    //   };
-    //   this.$emit("addTask", newTask);
-    //   this.text = "";
-    //   this.day = "";
-    //   this.reminder = "";
-    }, 
-
-    //  fillForm(){
-    //   this.text = upToDateTask.text
-    //   this.day = upToDateTask.day,
-    //   this.reminder = upToDateTask.reminder
-    // }
+      let id = 7
+      const newUpDatedTask = {
+        text : this.text, 
+        day : this.day, 
+      }
+      axios.put(`http://localhost:5000/tasks/${id}`, newUpDatedTask);
+      // console.log("here");
+      // console.log(this.upToDateTask)
+      // console.log(this.newUpDatedTask);
+    }
   }
 };
 </script>
