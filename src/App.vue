@@ -15,13 +15,15 @@ import Form from "./components/Form.vue";
 import FormData from "./components/FormData.vue";
 import axios from "axios";
 
+import { toRaw, isProxy } from "vue";
+
 export default {
   data() {
     return {
       tasks: [],
-      show: true, 
-      upToDateTask : {}, 
-      showUpdate : false
+      show: true,
+      upToDateTask: {},
+      showUpdate: false
     };
   },
   components: {
@@ -41,7 +43,7 @@ export default {
   methods: {
     async closeTask(id) {
       if (confirm("are you done !!"));
-      const response = await axios.delete(`http://localhost:5000/tasks/${id}`); 
+      const response = await axios.delete(`http://localhost:5000/tasks/${id}`);
       if (response.status == 200) {
         this.tasks = this.tasks.filter(task => {
           return task.id !== id;
@@ -53,7 +55,6 @@ export default {
 
     async togglereminder(id) {
       if (confirm("are you done !!"));
-      // fetch().then(response => respo)
       const response = await axios(`http://localhost:5000/tasks/${id}`);
       const remindedTask = response.data;
       const upDatedOne = await axios.put(`http://localhost:5000/tasks/${id}`, {
@@ -78,16 +79,10 @@ export default {
     },
 
     async updateTask(id) {
-      this.showUpdate = true ;
-      let response = await axios(`http://localhost:5000/tasks/${id}`) ;
-     this.upToDateTask = await response.data ;
-    //  console.log(upToDateTask) ;
-      // task = JSON.parse(JSON.stringify(task));
-      // upToDateTask.text = prompt("edit your task : ", task[0].text);
-      // upToDateTask.day = prompt("edit your task date :", task[0].day);
-
-      // console.log(this.upToDateTask) ;
-
+      this.showUpdate = false;
+      let response = await axios(`http://localhost:5000/tasks/${id}`);
+      this.upToDateTask = response.data;
+      this.showUpdate = true;
       // this.tasks = this.tasks.map(task =>
       //   task.id === id
       //     ? { ...task, text: updatedTask.text, day: updatedTask.day }
